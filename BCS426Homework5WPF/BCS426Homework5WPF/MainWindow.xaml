@@ -1,0 +1,35 @@
+﻿<Window x:Name="window" x:Class="BCS426Homework5WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BCS426Homework5WPF"
+        mc:Ignorable="d"
+        Title="Course Work GUI - Samantha Smith" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="178*"/>
+            <ColumnDefinition Width="219*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="listBoxSubmission" HorizontalAlignment="Left" Margin="10,64,0,10" Width="198" SelectionChanged="ListBoxSubmission_SelectionChanged"/>
+        <Label Content="Submissions" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assignment Name" HorizontalAlignment="Left" Margin="237,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Category Name" HorizontalAlignment="Left" Margin="237,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Grade" HorizontalAlignment="Left" Margin="237,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxAssignmentName" Height="23" Margin="9.4,67,9.6,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" ToolTipService.ToolTip  =  "Selected Submission's Assignment Name" Grid.Column="1" BindingGroup="{Binding AssignmentName}" />
+        <TextBox x:Name="textBoxCategoryName" Height="23" Margin="9.4,96,9.6,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" ToolTipService.ToolTip  =  "Selected Submission's Category Name" Grid.Column="1"/>
+        <TextBox x:Name="textBoxGrade" Height="23" Margin="9.4,127,9.6,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" ToolTipService.ToolTip  =  "Selected Submission's Grade" Grid.Column="1"/>
+        <Menu VerticalAlignment="Top" Margin="0,0,-0.4,0" Grid.ColumnSpan="2">
+            <MenuItem Header="File" Margin="0" HorizontalAlignment="Left">
+                <MenuItem x:Name="menuItemExit" Header="Exit" Click="MenuItemExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Import">
+                <MenuItem x:Name="menuItemImport" Header="Course Work From JSON File" Click="MenuItemImport_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem x:Name="menuItemAbout" Header="About" Click="MenuItemAbout_Click"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
